@@ -28,7 +28,7 @@ jobs:
 
   my_test2:
     runs-on: ubuntu-latest
-    
+    needs: my_test1
     steps:
     - name: Run test2
       run: echo Hello it test 2.
