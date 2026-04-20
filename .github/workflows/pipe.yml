@@ -21,4 +21,4 @@ jobs:
     - name: Check container 
       run: docker ps
     - name: Web App
-      run: curl http://localhost:80
+      run: curl http://localhost:8080
