@@ -13,8 +13,11 @@ jobs:
     steps:
     - name: Run script
       run: echo Hello, script
+
+      
   my_var1:
     runs-on: ubuntu-latest
+    needs: my_test1
     steps:
     - name: My Var
       run: echo $VAR1
@@ -22,13 +25,14 @@ jobs:
 
   my_var2:
     runs-on: ubuntu-latest
+    needs: my_var1
     steps:
     - name: My Var
       run: echo $VAR2
 
   my_test2:
     runs-on: ubuntu-latest
-    needs: my_test1
+    needs: my_var2
     steps:
     - name: Run test2
       run: echo Hello it test 2.
