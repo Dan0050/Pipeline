@@ -16,7 +16,7 @@ jobs:
       run: docker build -t Docker-nginx:1 .
     - name: Run Docker
       run: |
-        docker run -d --rm --name web -p 8080:80 deployapp:1
+        docker run -d --rm --name web -p 8080:80 Docker_nginx:1
         sleep 5
     - name: Check container 
       run: docker ps
