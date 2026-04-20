@@ -1,5 +1,7 @@
 name: First-Deploy
-
+env:
+  VAR1 : "Это аргумент 1"
+  VAR2 : "Это аргумент 2"
 on:
   push:
     branches: 
@@ -11,7 +13,9 @@ jobs:
     steps:
     - name: Run script
       run: echo Hello, script
-
+    steps:
+    - name: My Var
+      run: echo $VAR1
 
 
   my_test2:
