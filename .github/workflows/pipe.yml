@@ -12,9 +12,11 @@ jobs:
     
     steps:
     - uses: actions/checkout@v4
-    - name: Image
+    - name: Build image
       run: docker build -t deployapp:1 .
     - name: Run Docker
       run: docker run -d --rm --name web -p 80:8080 deployapp:1
-    - name: Check 
+    - name: Check container 
       run: docker ps
+    - name: Web App
+      run: curl http://localhost:8080
